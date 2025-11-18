@@ -1,6 +1,14 @@
 # AI Lytics Styleguide SDK
 
+[![CI](https://github.com/eugeniorubenjauregui/tmai-styleguide/actions/workflows/ci.yml/badge.svg)](https://github.com/eugeniorubenjauregui/tmai-styleguide/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/@ai-lytics/styleguide.svg)](https://www.npmjs.com/package/@ai-lytics/styleguide)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8.svg)](https://tailwindcss.com/)
+
 SDK completo de styleguide para AI Lytics - Sistema de diseño modular basado en Atomic Design con TypeScript y Tailwind CSS.
+
+**Desarrollado por [Tita Media](https://github.com/eugeniorubenjauregui)**
 
 ## Características
 
@@ -415,5 +423,7 @@ MIT
 
 ## Autor
 
-AI Lytics
+**Tita Media**
+
+Desarrollado con ❤️ por Tita Media
 
