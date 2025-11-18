@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Lytics Styleguide - Documentación</title>
+  <link rel="stylesheet" href="../dist/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #0D9488 0%, #1E3A8A 100%);
+      color: white;
+      padding: 3rem 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .header h1 {
+      font-size: 3.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    
+    .header p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+    
+    .nav {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    }
+    
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .nav a {
+      color: #64748b;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav a:hover {
+      color: #14b8a6;
+    }
+    
+    .nav a.active {
+      color: #14b8a6;
+    }
+    
+    .section {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    }
+    
+    .section h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+    }
+    
+    .section h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    
+    .section p {
+      color: #64748b;
+      margin-bottom: 1rem;
+    }
+    
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .preview-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      background: white;
+    }
+    
+    .preview-card h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    
+    .code-block {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin-top: 1rem;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 0.875rem;
+    }
+    
+    .color-swatch {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border-radius: 0.5rem;
+      margin: 0.5rem;
+      border: 1px solid #e2e8f0;
+      position: relative;
+    }
+    
+    .color-swatch::after {
+      content: attr(data-hex);
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0;
+      right: 0;
+      font-size: 0.75rem;
+      text-align: center;
+      color: #64748b;
+    }
+    
+    .spacing-demo {
+      background: #e2e8f0;
+      display: inline-block;
+      margin: 0.5rem;
+      border-radius: 0.25rem;
+    }
+    
+    .spacing-demo::after {
+      content: attr(data-size);
+      display: block;
+      background: #14b8a6;
+      border-radius: 0.25rem;
+    }
+    
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    
+    .token-table th,
+    .token-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .token-table th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    
+    .token-table td {
+      color: #64748b;
+    }
+    
+    .badge-demo {
+      display: inline-flex;
+      gap: 0.5rem;
+      margin: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <h1>AI Lytics Styleguide</h1>
+      <p>Sistema de diseño modular basado en Atomic Design</p>
+    </div>
+  </div>
+  
+  <nav class="nav">
+    <div class="container">
+      <ul>
+        <li><a href="#tokens" class="active">Tokens</a></li>
+        <li><a href="#atoms">Atoms</a></li>
+        <li><a href="#molecules">Molecules</a></li>
+        <li><a href="#organisms">Organisms</a></li>
+        <li><a href="#templates">Templates</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <!-- Tokens Section -->
+    <section id="tokens" class="section">
+      <h2>Design Tokens</h2>
+      
+      <h3>Colores</h3>
+      <p>Paleta de colores del sistema de diseño</p>
+      
+      <h4 style="margin-top: 1.5rem; font-size: 1rem; font-weight: 600;">Primarios</h4>
+      <div>
+        <div class="color-swatch" style="background: #14b8a6;" data-hex="#14B8A6"></div>
+        <div class="color-swatch" style="background: #0d9488;" data-hex="#0D9488"></div>
+        <div class="color-swatch" style="background: #1e40af;" data-hex="#1E40AF"></div>
+        <div class="color-swatch" style="background: #1e3a8a;" data-hex="#1E3A8A"></div>
+        <div class="color-swatch" style="background: #10b981;" data-hex="#10B981"></div>
+      </div>
+      
+      <h4 style="margin-top: 2rem; font-size: 1rem; font-weight: 600;">Neutrales</h4>
+      <div>
+        <div class="color-swatch" style="background: #0f172a;" data-hex="#0F172A"></div>
+        <div class="color-swatch" style="background: #334155;" data-hex="#334155"></div>
+        <div class="color-swatch" style="background: #64748b;" data-hex="#64748B"></div>
+        <div class="color-swatch" style="background: #e2e8f0;" data-hex="#E2E8F0"></div>
+        <div class="color-swatch" style="background: #ffffff; border: 2px solid #e2e8f0;" data-hex="#FFFFFF"></div>
+      </div>
+      
+      <h3>Tipografía</h3>
+      <p>Escala tipográfica basada en Inter</p>
+      <div class="preview-card" style="margin-top: 1rem;">
+        <div style="font-size: 3.75rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;">Display / Hero</div>
+        <div style="font-size: 2.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;">H1 / Título Principal</div>
+        <div style="font-size: 1.875rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 1rem;">H2 / Subtítulo</div>
+        <div style="font-size: 1.5rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 1rem;">H3 / Encabezado</div>
+        <div style="font-size: 1.25rem; font-weight: 500; line-height: 1.4; margin-bottom: 1rem;">H4 / Subencabezado</div>
+        <div style="font-size: 1rem; font-weight: 400; line-height: 1.5; margin-bottom: 1rem;">Body / Cuerpo de texto</div>
+        <div style="font-size: 0.875rem; font-weight: 400; line-height: 1.5; margin-bottom: 1rem;">Small / Pequeño</div>
+        <div style="font-size: 0.75rem; font-weight: 400; line-height: 1.5;">Caption / Leyenda</div>
+      </div>
+      
+      <h3>Espaciado</h3>
+      <p>Sistema de espaciado basado en escala de 4px</p>
+      <table class="token-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Valor</th>
+            <th>Píxeles</th>
+            <th>Visual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>xs</td>
+            <td>0.25rem</td>
+            <td>4px</td>
+            <td><div class="spacing-demo" style="width: 4px; height: 20px;" data-size=""></div></td>
+          </tr>
+          <tr>
+            <td>sm</td>
+            <td>0.5rem</td>
+            <td>8px</td>
+            <td><div class="spacing-demo" style="width: 8px; height: 20px;" data-size=""></div></td>
+          </tr>
+          <tr>
+            <td>md</td>
+            <td>0.75rem</td>
+            <td>12px</td>
+            <td><div class="spacing-demo" style="width: 12px; height: 20px;" data-size=""></div></td>
+          </tr>
+          <tr>
+            <td>base</td>
+            <td>1rem</td>
+            <td>16px</td>
+            <td><div class="spacing-demo" style="width: 16px; height: 20px;" data-size=""></div></td>
+          </tr>
+          <tr>
+            <td>lg</td>
+            <td>1.5rem</td>
+            <td>24px</td>
+            <td><div class="spacing-demo" style="width: 24px; height: 20px;" data-size=""></div></td>
+          </tr>
+          <tr>
+            <td>xl</td>
+            <td>2rem</td>
+            <td>32px</td>
+            <td><div class="spacing-demo" style="width: 32px; height: 20px;" data-size=""></div></td>
+          </tr>
+          <tr>
+            <td>2xl</td>
+            <td>3rem</td>
+            <td>48px</td>
+            <td><div class="spacing-demo" style="width: 48px; height: 20px;" data-size=""></div></td>
+          </tr>
+          <tr>
+            <td>3xl</td>
+            <td>4rem</td>
+            <td>64px</td>
+            <td><div class="spacing-demo" style="width: 64px; height: 20px;" data-size=""></div></td>
+          </tr>
+          <tr>
+            <td>4xl</td>
+            <td>6rem</td>
+            <td>96px</td>
+            <td><div class="spacing-demo" style="width: 96px; height: 20px;" data-size=""></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <!-- Atoms Section -->
+    <section id="atoms" class="section">
+      <h2>Atoms - Componentes Básicos</h2>
+      
+      <h3>Button</h3>
+      <p>Botones con múltiples variantes, tamaños y estados</p>
+      <div class="preview-card" style="margin-top: 1rem;">
+        <h4>Variantes</h4>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+          <button style="background: #14b8a6; color: white; border: none; padding: 0.625rem 1.25rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">Primary</button>
+          <button style="background: #1e40af; color: white; border: none; padding: 0.625rem 1.25rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">Secondary</button>
+          <button style="background: transparent; color: #14b8a6; border: 2px solid #14b8a6; padding: 0.625rem 1.25rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">Outline</button>
+          <button style="background: transparent; color: #14b8a6; border: none; padding: 0.625rem 1.25rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">Ghost</button>
+        </div>
+        <h4 style="margin-top: 1.5rem;">Tamaños</h4>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-top: 1rem;">
+          <button style="background: #14b8a6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500; cursor: pointer;">Small</button>
+          <button style="background: #14b8a6; color: white; border: none; padding: 0.625rem 1.25rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 500; cursor: pointer;">Medium</button>
+          <button style="background: #14b8a6; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-size: 1.125rem; font-weight: 500; cursor: pointer;">Large</button>
+        </div>
+      </div>
+      
+      <h3>Input</h3>
+      <p>Campos de entrada con estados de validación</p>
+      <div class="preview-card" style="margin-top: 1rem;">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="text" placeholder="Input por defecto" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; font-size: 1rem;">
+          <input type="text" placeholder="Input con error" style="width: 100%; padding: 0.75rem; border: 1px solid #dc2626; border-radius: 0.5rem; font-size: 1rem;">
+          <input type="text" placeholder="Input con éxito" style="width: 100%; padding: 0.75rem; border: 1px solid #10b981; border-radius: 0.5rem; font-size: 1rem;">
+          <input type="text" placeholder="Input deshabilitado" disabled style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; font-size: 1rem; opacity: 0.5; background: #f1f5f9;">
+        </div>
+      </div>
+      
+      <h3>Badge</h3>
+      <p>Indicadores pequeños para estados o etiquetas</p>
+      <div class="preview-card" style="margin-top: 1rem;">
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="background: #f1f5f9; color: #334155; padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500;">Default</span>
+          <span style="background: #14b8a6; color: white; padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500;">Primary</span>
+          <span style="background: #10b981; color: white; padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500;">Success</span>
+          <span style="background: #f59e0b; color: white; padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500;">Warning</span>
+          <span style="background: #dc2626; color: white; padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500;">Error</span>
+          <span style="background: #1e40af; color: white; padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500;">Info</span>
+        </div>
+      </div>
+      
+      <h3>Typography</h3>
+      <p>Componentes de texto siguiendo la escala tipográfica</p>
+      <div class="preview-card" style="margin-top: 1rem;">
+        <div style="font-size: 3.75rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;">Display</div>
+        <div style="font-size: 2.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;">H1 - Título Principal</div>
+        <div style="font-size: 1.875rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 1rem;">H2 - Subtítulo</div>
+        <div style="font-size: 1.5rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 1rem;">H3 - Encabezado</div>
+        <div style="font-size: 1.25rem; font-weight: 500; line-height: 1.4; margin-bottom: 1rem;">H4 - Subencabezado</div>
+        <div style="font-size: 1rem; font-weight: 400; line-height: 1.5; margin-bottom: 1rem;">Body - Texto de cuerpo normal que se lee fácilmente y proporciona información clara.</div>
+        <div style="font-size: 0.875rem; font-weight: 400; line-height: 1.5; margin-bottom: 1rem;">Small - Texto pequeño para información secundaria</div>
+        <div style="font-size: 0.75rem; font-weight: 400; line-height: 1.5;">Caption - Texto de leyenda o pie de foto</div>
+      </div>
+    </section>
+    
+    <!-- Molecules Section -->
+    <section id="molecules" class="section">
+      <h2>Molecules - Componentes Compuestos</h2>
+      
+      <h3>SearchInput</h3>
+      <p>Input con icono de búsqueda integrado</p>
+      <div class="preview-card" style="margin-top: 1rem;">
+        <div style="position: relative;">
+          <svg style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); width: 1.5rem; height: 1.5rem; color: #94a3b8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <input type="text" placeholder="Buscar..." style="width: 100%; padding: 0.75rem 0.75rem 0.75rem 2.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; font-size: 1rem;">
+        </div>
+      </div>
+      
+      <h3>FormField</h3>
+      <p>Input completo con label, validación y mensajes</p>
+      <div class="preview-card" style="margin-top: 1rem;">
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div>
+            <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: #0f172a;">Email</label>
+            <input type="email" placeholder="tu@email.com" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.5rem; font-size: 1rem;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: #dc2626;">Contraseña <span style="color: #dc2626;">*</span></label>
+            <input type="password" style="width: 100%; padding: 0.75rem; border: 1px solid #dc2626; border-radius: 0.5rem; font-size: 1rem;">
+            <p style="font-size: 0.875rem; color: #dc2626; margin-top: 0.25rem;">La contraseña es requerida</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Organisms Section -->
+    <section id="organisms" class="section">
+      <h2>Organisms - Componentes Complejos</h2>
+      
+      <h3>Card</h3>
+      <p>Tarjeta composable con Header, Body y Footer</p>
+      <div class="preview-grid" style="margin-top: 1rem;">
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+          <div style="padding: 1.5rem; border-bottom: 1px solid #e2e8f0;">
+            <h4 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Tarjeta Estándar</h4>
+          </div>
+          <div style="padding: 1.5rem;">
+            <p style="color: #64748b; margin-bottom: 1rem;">Esta es una tarjeta estándar con header, body y footer. Puede contener cualquier tipo de contenido.</p>
+          </div>
+          <div style="padding: 1.5rem; border-top: 1px solid #e2e8f0;">
+            <button style="background: #14b8a6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500; cursor: pointer;">Acción</button>
+          </div>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #0D9488 0%, #1E3A8A 100%); border-radius: 0.75rem; overflow: hidden; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);">
+          <div style="padding: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.2);">
+            <h4 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; color: white;">Tarjeta Destacada</h4>
+          </div>
+          <div style="padding: 1.5rem;">
+            <p style="color: white; margin-bottom: 1rem; opacity: 0.9;">Esta tarjeta usa el gradiente hero para destacar contenido importante.</p>
+          </div>
+          <div style="padding: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            <button style="background: transparent; color: white; border: 2px solid white; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500; cursor: pointer;">Acción</button>
+          </div>
+        </div>
+      </div>
+      
+      <h3>Navigation</h3>
+      <p>Navegación principal con estados activos</p>
+      <div class="preview-card" style="margin-top: 1rem;">
+        <nav style="display: flex; gap: 0.25rem;">
+          <a href="#" style="background: #14b8a6; color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; font-size: 0.875rem;">Inicio</a>
+          <a href="#" style="color: #64748b; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; font-size: 0.875rem; transition: all 0.2s;">Dashboard</a>
+          <a href="#" style="color: #64748b; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; font-size: 0.875rem; transition: all 0.2s;">Configuración</a>
+        </nav>
+      </div>
+    </section>
+    
+    <!-- Templates Section -->
+    <section id="templates" class="section">
+      <h2>Templates - Layouts Estructurales</h2>
+      
+      <h3>DashboardLayout</h3>
+      <p>Layout base para dashboards con sidebar, header y footer</p>
+      <div class="preview-card" style="margin-top: 1rem; padding: 0;">
+        <div style="border: 2px dashed #e2e8f0; border-radius: 0.5rem; padding: 2rem; text-align: center; color: #64748b;">
+          <p>Vista previa del layout completo disponible en la aplicación de preview</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <script>
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Update active nav
+          document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+    
+    // Update active nav on scroll
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav a');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

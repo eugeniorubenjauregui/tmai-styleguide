@@ -1,0 +1,66 @@
+{
+  "name": "@ai-lytics/styleguide",
+  "version": "1.0.0",
+  "description": "SDK Styleguide completo para AI Lytics - Sistema de diseño modular basado en Atomic Design",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/styles.css",
+    "./tailwind.config": "./tailwind.config.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "tailwind.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eugeniorubenjauregui/tmai-styleguide.git"
+  },
+  "homepage": "https://github.com/eugeniorubenjauregui/tmai-styleguide#readme",
+  "bugs": {
+    "url": "https://github.com/eugeniorubenjauregui/tmai-styleguide/issues"
+  },
+  "scripts": {
+    "build": "tsc && npm run build:tailwind",
+    "build:tailwind": "tailwindcss -i ./src/styles/input.css -o ./dist/styles.css --minify",
+    "dev": "tsc --watch",
+    "type-check": "tsc --noEmit",
+    "prepublish": "node scripts/prepublish.js",
+    "prepublishOnly": "npm run build && npm run prepublish",
+    "publish:dry-run": "npm run build && npm publish --dry-run",
+    "serve:docs": "npx serve docs -p 3000",
+    "serve:preview": "npx serve preview -p 3001"
+  },
+  "keywords": [
+    "design-system",
+    "styleguide",
+    "tailwind",
+    "typescript",
+    "atomic-design",
+    "ui-components"
+  ],
+  "author": "AI Lytics",
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3"
+  }
+}
