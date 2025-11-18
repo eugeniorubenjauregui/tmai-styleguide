@@ -3,7 +3,7 @@
 ## Instalación
 
 ```bash
-npm install @ai-lytics/styleguide
+npm install ai-lytics-styleguide
 ```
 
 ## Configuración Inicial
@@ -13,7 +13,7 @@ npm install @ai-lytics/styleguide
 En tu archivo principal (index.js o App.js):
 
 ```typescript
-import '@ai-lytics/styleguide/dist/styles.css';
+import 'ai-lytics-styleguide/dist/styles.css';
 ```
 
 ### 2. Configurar Tailwind CSS
@@ -22,13 +22,13 @@ Si usas Tailwind CSS en tu proyecto, extiende la configuración del styleguide:
 
 ```javascript
 // tailwind.config.js
-const styleguideConfig = require('@ai-lytics/styleguide/tailwind.config.js');
+const styleguideConfig = require('ai-lytics-styleguide/tailwind.config.js');
 
 module.exports = {
   ...styleguideConfig,
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@ai-lytics/styleguide/dist/**/*.js',
+    './node_modules/ai-lytics-styleguide/dist/**/*.js',
   ],
 };
 ```
@@ -38,15 +38,15 @@ module.exports = {
 ### Importar Componentes
 
 ```typescript
-import { Button, Input, Card, Typography } from '@ai-lytics/styleguide';
+import { Button, Input, Card, Typography } from 'ai-lytics-styleguide';
 ```
 
 ### Ejemplo Completo
 
 ```tsx
 import React from 'react';
-import { Button, Input, Card, Typography } from '@ai-lytics/styleguide';
-import '@ai-lytics/styleguide/dist/styles.css';
+import { Button, Input, Card, Typography } from 'ai-lytics-styleguide';
+import 'ai-lytics-styleguide/dist/styles.css';
 
 function App() {
   const [value, setValue] = React.useState('');
@@ -174,7 +174,7 @@ function App() {
 ### Acceder a Tokens
 
 ```typescript
-import { colors, typography, spacing, shadows } from '@ai-lytics/styleguide';
+import { colors, typography, spacing, shadows } from 'ai-lytics-styleguide';
 
 // Colores
 const primaryColor = colors.semantic.brand.primary; // #14b8a6
@@ -202,7 +202,7 @@ const mediumShadow = shadows.md;
 ## Sistema de Versiones
 
 ```typescript
-import { versionManager, getCurrentTokens } from '@ai-lytics/styleguide';
+import { versionManager, getCurrentTokens } from 'ai-lytics-styleguide';
 
 // Obtener tokens de una versión específica
 const v1Tokens = versionManager.getTokens('v1');
@@ -247,7 +247,7 @@ const currentTokens = getCurrentTokens();
 
 ### Los estilos no se aplican
 
-1. Verifica que importaste el CSS: `import '@ai-lytics/styleguide/dist/styles.css'`
+1. Verifica que importaste el CSS: `import 'ai-lytics-styleguide/dist/styles.css'`
 2. Asegúrate de que Tailwind está configurado correctamente
 3. Verifica que las clases de Tailwind están siendo procesadas
 

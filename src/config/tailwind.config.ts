@@ -127,11 +127,11 @@ const config: Config = {
         ],
       },
       fontWeight: {
-        normal: tokens.typography.fontWeight.normal,
-        medium: tokens.typography.fontWeight.medium,
-        semibold: tokens.typography.fontWeight.semibold,
-        bold: tokens.typography.fontWeight.bold,
-        extrabold: tokens.typography.fontWeight.extrabold,
+        normal: String(tokens.typography.fontWeight.normal),
+        medium: String(tokens.typography.fontWeight.medium),
+        semibold: String(tokens.typography.fontWeight.semibold),
+        bold: String(tokens.typography.fontWeight.bold),
+        extrabold: String(tokens.typography.fontWeight.extrabold),
       },
       spacing: {
         xs: tokens.spacing.scale.xs,

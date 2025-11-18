@@ -19,7 +19,7 @@ Esta guía te ayudará a publicar el SDK de AI Lytics Styleguide en npm.
 ### 1. Verificar package.json
 
 Asegúrate de que el `package.json` tenga:
-- ✅ Nombre del paquete correcto: `@ai-lytics/styleguide`
+- ✅ Nombre del paquete correcto: `ai-lytics-styleguide`
 - ✅ Versión actualizada
 - ✅ Descripción clara
 - ✅ Repository URL (si aplica)
@@ -102,16 +102,16 @@ npm publish --access public
 ## Verificación Post-Publicación
 
 1. **Verificar en npm**:
-   Visita: `https://www.npmjs.com/package/@ai-lytics/styleguide`
+   Visita: `https://www.npmjs.com/package/ai-lytics-styleguide`
 
 2. **Probar instalación**:
    ```bash
-   npm install @ai-lytics/styleguide
+   npm install ai-lytics-styleguide
    ```
 
 3. **Verificar contenido**:
    ```bash
-   cd node_modules/@ai-lytics/styleguide
+   cd node_modules/ai-lytics-styleguide
    ls -la
    ```
 
@@ -174,13 +174,13 @@ npm run build
 
 ```bash
 # Ver información del paquete
-npm view @ai-lytics/styleguide
+npm view ai-lytics-styleguide
 
 # Ver versiones publicadas
-npm view @ai-lytics/styleguide versions
+npm view ai-lytics-styleguide versions
 
 # Despublicar (solo dentro de 72 horas)
-npm unpublish @ai-lytics/styleguide@1.0.0
+npm unpublish ai-lytics-styleguide@1.0.0
 
 # Ver qué archivos se publicarán
 npm pack --dry-run
@@ -197,6 +197,6 @@ npm pack --dry-run
 
 Después de publicar, actualiza la documentación con el link de npm:
 ```
-npm install @ai-lytics/styleguide
+npm install ai-lytics-styleguide
 ```
 

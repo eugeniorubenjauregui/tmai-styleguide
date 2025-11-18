@@ -1,7 +1,7 @@
 # AI Lytics Styleguide SDK
 
 [![CI](https://github.com/eugeniorubenjauregui/tmai-styleguide/actions/workflows/ci.yml/badge.svg)](https://github.com/eugeniorubenjauregui/tmai-styleguide/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/@ai-lytics/styleguide.svg)](https://www.npmjs.com/package/@ai-lytics/styleguide)
+[![npm version](https://img.shields.io/npm/v/ai-lytics-styleguide.svg)](https://www.npmjs.com/package/ai-lytics-styleguide)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8.svg)](https://tailwindcss.com/)
@@ -34,7 +34,7 @@ SDK completo de styleguide para AI Lytics - Sistema de diseño modular basado en
 ## Instalación
 
 ```bash
-npm install @ai-lytics/styleguide
+npm install ai-lytics-styleguide
 ```
 
 ## Uso Básico
@@ -42,13 +42,13 @@ npm install @ai-lytics/styleguide
 ### Importar estilos
 
 ```typescript
-import '@ai-lytics/styleguide/dist/styles.css';
+import 'ai-lytics-styleguide/dist/styles.css';
 ```
 
 ### Usar componentes
 
 ```typescript
-import { Button, Input, Card, Typography } from '@ai-lytics/styleguide';
+import { Button, Input, Card, Typography } from 'ai-lytics-styleguide';
 
 function App() {
   return (
@@ -66,7 +66,7 @@ function App() {
 ### Usar tokens
 
 ```typescript
-import { tokens, colors, typography, spacing } from '@ai-lytics/styleguide';
+import { tokens, colors, typography, spacing } from 'ai-lytics-styleguide';
 
 console.log(colors.semantic.brand.primary); // #14b8a6
 console.log(typography.scale.h1.fontSize); // 2.25rem
@@ -76,7 +76,7 @@ console.log(spacing.scale.lg); // 1.5rem
 ### Sistema de Versiones
 
 ```typescript
-import { versionManager, getCurrentTokens } from '@ai-lytics/styleguide';
+import { versionManager, getCurrentTokens } from 'ai-lytics-styleguide';
 
 // Obtener tokens de una versión específica
 const v1Tokens = versionManager.getTokens('v1');
@@ -95,7 +95,7 @@ const currentTokens = getCurrentTokens();
 #### Button
 
 ```typescript
-import { Button } from '@ai-lytics/styleguide';
+import { Button } from 'ai-lytics-styleguide';
 
 <Button variant="primary" size="md" onClick={handleClick}>
   Enviar
@@ -113,7 +113,7 @@ import { Button } from '@ai-lytics/styleguide';
 #### Input
 
 ```typescript
-import { Input } from '@ai-lytics/styleguide';
+import { Input } from 'ai-lytics-styleguide';
 
 <Input
   type="text"
@@ -132,7 +132,7 @@ import { Input } from '@ai-lytics/styleguide';
 #### Icon
 
 ```typescript
-import { Icon } from '@ai-lytics/styleguide';
+import { Icon } from 'ai-lytics-styleguide';
 
 <Icon size="md" color="#14b8a6">
   <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -142,7 +142,7 @@ import { Icon } from '@ai-lytics/styleguide';
 #### Avatar
 
 ```typescript
-import { Avatar } from '@ai-lytics/styleguide';
+import { Avatar } from 'ai-lytics-styleguide';
 
 <Avatar
   src="/avatar.jpg"
@@ -160,7 +160,7 @@ import { Avatar } from '@ai-lytics/styleguide';
 #### Badge
 
 ```typescript
-import { Badge } from '@ai-lytics/styleguide';
+import { Badge } from 'ai-lytics-styleguide';
 
 <Badge variant="primary" size="md">
   Nuevo
@@ -170,7 +170,7 @@ import { Badge } from '@ai-lytics/styleguide';
 #### Typography
 
 ```typescript
-import { H1, H2, Body, Typography } from '@ai-lytics/styleguide';
+import { H1, H2, Body, Typography } from 'ai-lytics-styleguide';
 
 <H1>Título Principal</H1>
 <H2>Subtítulo</H2>
@@ -184,7 +184,7 @@ import { H1, H2, Body, Typography } from '@ai-lytics/styleguide';
 #### SearchInput
 
 ```typescript
-import { SearchInput } from '@ai-lytics/styleguide';
+import { SearchInput } from 'ai-lytics-styleguide';
 
 <SearchInput
   placeholder="Buscar..."
@@ -196,7 +196,7 @@ import { SearchInput } from '@ai-lytics/styleguide';
 #### FormField
 
 ```typescript
-import { FormField } from '@ai-lytics/styleguide';
+import { FormField } from 'ai-lytics-styleguide';
 
 <FormField
   label="Email"
@@ -211,7 +211,7 @@ import { FormField } from '@ai-lytics/styleguide';
 #### ButtonGroup
 
 ```typescript
-import { ButtonGroup } from '@ai-lytics/styleguide';
+import { ButtonGroup } from 'ai-lytics-styleguide';
 
 <ButtonGroup
   buttons={[
@@ -227,7 +227,7 @@ import { ButtonGroup } from '@ai-lytics/styleguide';
 #### Card
 
 ```typescript
-import { Card } from '@ai-lytics/styleguide';
+import { Card } from 'ai-lytics-styleguide';
 
 <Card variant="default" shadow>
   <Card.Image src="/image.jpg" alt="Card image" />
@@ -246,7 +246,7 @@ import { Card } from '@ai-lytics/styleguide';
 #### Form
 
 ```typescript
-import { Form } from '@ai-lytics/styleguide';
+import { Form } from 'ai-lytics-styleguide';
 
 <Form
   fields={[
@@ -273,7 +273,7 @@ import { Form } from '@ai-lytics/styleguide';
 #### Navigation
 
 ```typescript
-import { Navigation } from '@ai-lytics/styleguide';
+import { Navigation } from 'ai-lytics-styleguide';
 
 <Navigation
   items={[
@@ -288,7 +288,7 @@ import { Navigation } from '@ai-lytics/styleguide';
 #### DataTable
 
 ```typescript
-import { DataTable } from '@ai-lytics/styleguide';
+import { DataTable } from 'ai-lytics-styleguide';
 
 <DataTable
   columns={[
@@ -310,7 +310,7 @@ import { DataTable } from '@ai-lytics/styleguide';
 #### DashboardLayout
 
 ```typescript
-import { DashboardLayout } from '@ai-lytics/styleguide';
+import { DashboardLayout } from 'ai-lytics-styleguide';
 
 <DashboardLayout
   sidebarItems={[
@@ -332,13 +332,13 @@ El SDK incluye una configuración de Tailwind personalizada. Para usarla en tu p
 
 ```javascript
 // tailwind.config.js
-const styleguideConfig = require('@ai-lytics/styleguide/src/config/tailwind.config.ts');
+const styleguideConfig = require('ai-lytics-styleguide/src/config/tailwind.config.ts');
 
 module.exports = {
   ...styleguideConfig,
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@ai-lytics/styleguide/dist/**/*.js',
+    './node_modules/ai-lytics-styleguide/dist/**/*.js',
   ],
 };
 ```
@@ -348,7 +348,7 @@ module.exports = {
 ### Colores
 
 ```typescript
-import { colors } from '@ai-lytics/styleguide';
+import { colors } from 'ai-lytics-styleguide';
 
 // Primitivos
 colors.primitives.teal[500]; // #14b8a6
@@ -366,7 +366,7 @@ colors.gradients.hero; // linear-gradient(...)
 ### Tipografía
 
 ```typescript
-import { typography } from '@ai-lytics/styleguide';
+import { typography } from 'ai-lytics-styleguide';
 
 typography.fontFamily.primary; // 'Inter'
 typography.fontSize.xl; // '1.25rem'
@@ -377,7 +377,7 @@ typography.scale.h1.fontSize; // '2.25rem'
 ### Espaciado
 
 ```typescript
-import { spacing } from '@ai-lytics/styleguide';
+import { spacing } from 'ai-lytics-styleguide';
 
 spacing.scale.xs; // '0.25rem' (4px)
 spacing.scale.lg; // '1.5rem' (24px)

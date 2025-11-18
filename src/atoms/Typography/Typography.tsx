@@ -50,7 +50,7 @@ const variantClasses: Record<TypographyVariant, string> = {
   caption: 'text-xs font-normal leading-normal',
 };
 
-const defaultTags: Record<TypographyVariant, keyof JSX.IntrinsicElements> = {
+const defaultTags: Record<TypographyVariant, React.ElementType> = {
   display: 'h1',
   h1: 'h1',
   h2: 'h2',
@@ -68,46 +68,42 @@ export const Typography: React.FC<TypographyProps> = ({
   as,
   ...props
 }) => {
-  const Tag = as || defaultTags[variant];
+  const Tag = (as || defaultTags[variant]) as any;
   const classes = classNames(variantClasses[variant], className);
 
-  return (
-    <Tag className={classes} {...props}>
-      {children}
-    </Tag>
-  );
+  return <Tag className={classes} {...props}>{children}</Tag>;
 };
 
 // Convenience components for each variant
 export const Display: React.FC<Omit<TypographyProps, 'variant'>> = (props) => (
-  <Typography variant="display" {...props} />
+  <Typography variant="display" {...props}>{props.children}</Typography>
 );
 
 export const H1: React.FC<Omit<TypographyProps, 'variant'>> = (props) => (
-  <Typography variant="h1" {...props} />
+  <Typography variant="h1" {...props}>{props.children}</Typography>
 );
 
 export const H2: React.FC<Omit<TypographyProps, 'variant'>> = (props) => (
-  <Typography variant="h2" {...props} />
+  <Typography variant="h2" {...props}>{props.children}</Typography>
 );
 
 export const H3: React.FC<Omit<TypographyProps, 'variant'>> = (props) => (
-  <Typography variant="h3" {...props} />
+  <Typography variant="h3" {...props}>{props.children}</Typography>
 );
 
 export const H4: React.FC<Omit<TypographyProps, 'variant'>> = (props) => (
-  <Typography variant="h4" {...props} />
+  <Typography variant="h4" {...props}>{props.children}</Typography>
 );
 
 export const Body: React.FC<Omit<TypographyProps, 'variant'>> = (props) => (
-  <Typography variant="body" {...props} />
+  <Typography variant="body" {...props}>{props.children}</Typography>
 );
 
 export const Small: React.FC<Omit<TypographyProps, 'variant'>> = (props) => (
-  <Typography variant="small" {...props} />
+  <Typography variant="small" {...props}>{props.children}</Typography>
 );
 
 export const Caption: React.FC<Omit<TypographyProps, 'variant'>> = (props) => (
-  <Typography variant="caption" {...props} />
+  <Typography variant="caption" {...props}>{props.children}</Typography>
 );
 

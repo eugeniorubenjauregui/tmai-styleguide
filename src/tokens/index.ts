@@ -3,6 +3,11 @@
  * Central export for all design tokens
  */
 
+import { colors, type ColorTokens } from './colors';
+import { typography, type TypographyTokens } from './typography';
+import { spacing, type SpacingTokens } from './spacing';
+import { shadows, type ShadowTokens } from './shadows';
+
 export { colors, type ColorTokens } from './colors';
 export { typography, type TypographyTokens } from './typography';
 export { spacing, type SpacingTokens } from './spacing';

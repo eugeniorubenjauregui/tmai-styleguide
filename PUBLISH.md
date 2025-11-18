@@ -72,10 +72,10 @@ npm publish --access public
 
 ```bash
 # Ver información del paquete
-npm view @ai-lytics/styleguide
+npm view ai-lytics-styleguide
 
 # Probar instalación
-npm install @ai-lytics/styleguide
+npm install ai-lytics-styleguide
 ```
 
 ## 📚 Documentación Completa
