@@ -71,7 +71,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
     >
       {/* Top Navigation */}
       {topNavItems && (
-        <header className="bg-white border-b border-gray-200 px-6 py-4">
+        <header className="bg-white border-b border-gray-200 px-page-responsive py-base">
           <Navigation items={topNavItems} orientation="horizontal" />
         </header>
       )}
@@ -93,19 +93,19 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
               'overflow-y-auto'
             )}
           >
-            <div className="p-4">{sidebarContent}</div>
+            <div className="p-card-responsive">{sidebarContent}</div>
           </aside>
         )}
 
         {/* Main Content */}
         <main className="flex-1 overflow-y-auto">
-          <div className="p-6">{children}</div>
+          <div className="p-page-responsive">{children}</div>
         </main>
       </div>
 
       {/* Footer */}
       {footer && (
-        <footer className="bg-white border-t border-gray-200 px-6 py-4">
+        <footer className="bg-white border-t border-gray-200 px-page-responsive py-base">
           {footer}
         </footer>
       )}

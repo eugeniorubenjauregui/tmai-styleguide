@@ -27,7 +27,7 @@ export const CardFooter: React.FC<CardFooterProps> = ({
   ...props
 }) => {
   const classes = classNames(
-    'px-6 py-4 border-t border-gray-200',
+    'px-card-responsive py-base border-t border-gray-200',
     className
   );
 

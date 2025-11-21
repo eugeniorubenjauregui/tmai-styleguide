@@ -152,6 +152,26 @@ module.exports = {
         'gradient-subtle': tokens.colors.gradients.subtle,
       },
       screens: tokens.spacing.breakpoints,
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: tokens.spacing.container.mobile.padding,
+          tablet: tokens.spacing.container.tablet.padding,
+          desktop: tokens.spacing.container.desktop.padding,
+        },
+        screens: {
+          mobile: tokens.spacing.container.mobile.maxWidth,
+          tablet: tokens.spacing.container.tablet.maxWidth,
+          desktop: tokens.spacing.container.desktop.maxWidth,
+        },
+      },
+      gridTemplateColumns: {
+        '12': 'repeat(12, minmax(0, 1fr))',
+      },
+      gap: {
+        ...tokens.spacing.scale,
+        grid: tokens.spacing.grid.gap,
+      },
     },
   },
   plugins: [],

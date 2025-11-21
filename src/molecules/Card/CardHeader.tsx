@@ -27,7 +27,7 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
   ...props
 }) => {
   const classes = classNames(
-    'px-6 py-4 border-b border-gray-200',
+    'px-card-responsive py-base border-b border-gray-200',
     className
   );
 

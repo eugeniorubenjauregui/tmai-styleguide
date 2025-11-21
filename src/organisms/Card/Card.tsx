@@ -92,7 +92,7 @@ const CardActions: React.FC<CardActionsProps> = ({
   className = '',
 }) => {
   const classes = classNames(
-    'px-6 py-4 flex items-center justify-end gap-2',
+    'px-card-responsive py-base flex items-center justify-end gap-element-responsive',
     className
   );
 

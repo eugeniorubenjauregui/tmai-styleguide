@@ -26,7 +26,7 @@ export const CardBody: React.FC<CardBodyProps> = ({
   className = '',
   ...props
 }) => {
-  const classes = classNames('px-6 py-4', className);
+  const classes = classNames('px-card-responsive py-base', className);
 
   return (
     <div className={classes} {...props}>

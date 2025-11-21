@@ -134,15 +134,19 @@ const config: Config = {
         extrabold: String(tokens.typography.fontWeight.extrabold),
       },
       spacing: {
-        xs: tokens.spacing.scale.xs,
-        sm: tokens.spacing.scale.sm,
-        md: tokens.spacing.scale.md,
-        base: tokens.spacing.scale.base,
-        lg: tokens.spacing.scale.lg,
-        xl: tokens.spacing.scale.xl,
-        '2xl': tokens.spacing.scale['2xl'],
-        '3xl': tokens.spacing.scale['3xl'],
-        '4xl': tokens.spacing.scale['4xl'],
+        ...tokens.spacing.scale,
+        'page-mobile': tokens.spacing.responsive.pagePadding.mobile,
+        'page-tablet': tokens.spacing.responsive.pagePadding.tablet,
+        'page-desktop': tokens.spacing.responsive.pagePadding.desktop,
+        'card-mobile': tokens.spacing.responsive.cardPadding.mobile,
+        'card-tablet': tokens.spacing.responsive.cardPadding.tablet,
+        'card-desktop': tokens.spacing.responsive.cardPadding.desktop,
+        'section-mobile': tokens.spacing.responsive.sectionGap.mobile,
+        'section-tablet': tokens.spacing.responsive.sectionGap.tablet,
+        'section-desktop': tokens.spacing.responsive.sectionGap.desktop,
+        'element-mobile': tokens.spacing.responsive.elementGap.mobile,
+        'element-tablet': tokens.spacing.responsive.elementGap.tablet,
+        'element-desktop': tokens.spacing.responsive.elementGap.desktop,
       },
       borderRadius: {
         xs: '0.125rem', // 2px
@@ -168,9 +172,128 @@ const config: Config = {
         tablet: tokens.spacing.breakpoints.tablet,
         desktop: tokens.spacing.breakpoints.desktop,
       },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: tokens.spacing.container.mobile.padding,
+          tablet: tokens.spacing.container.tablet.padding,
+          desktop: tokens.spacing.container.desktop.padding,
+        },
+        screens: {
+          mobile: tokens.spacing.container.mobile.maxWidth,
+          tablet: tokens.spacing.container.tablet.maxWidth,
+          desktop: tokens.spacing.container.desktop.maxWidth,
+        },
+      },
+      gridTemplateColumns: {
+        '12': 'repeat(12, minmax(0, 1fr))',
+      },
+      gap: {
+        ...tokens.spacing.scale,
+        grid: tokens.spacing.grid.gap,
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities, theme }: any) {
+      const newUtilities = {
+        '.p-page-responsive': {
+          padding: theme('spacing.page-mobile'),
+          '@media (min-width: 768px)': {
+            padding: theme('spacing.page-tablet'),
+          },
+          '@media (min-width: 1024px)': {
+            padding: theme('spacing.page-desktop'),
+          },
+        },
+        '.px-page-responsive': {
+          paddingLeft: theme('spacing.page-mobile'),
+          paddingRight: theme('spacing.page-mobile'),
+          '@media (min-width: 768px)': {
+            paddingLeft: theme('spacing.page-tablet'),
+            paddingRight: theme('spacing.page-tablet'),
+          },
+          '@media (min-width: 1024px)': {
+            paddingLeft: theme('spacing.page-desktop'),
+            paddingRight: theme('spacing.page-desktop'),
+          },
+        },
+        '.py-page-responsive': {
+          paddingTop: theme('spacing.page-mobile'),
+          paddingBottom: theme('spacing.page-mobile'),
+          '@media (min-width: 768px)': {
+            paddingTop: theme('spacing.page-tablet'),
+            paddingBottom: theme('spacing.page-tablet'),
+          },
+          '@media (min-width: 1024px)': {
+            paddingTop: theme('spacing.page-desktop'),
+            paddingBottom: theme('spacing.page-desktop'),
+          },
+        },
+        '.p-card-responsive': {
+          padding: theme('spacing.card-mobile'),
+          '@media (min-width: 768px)': {
+            padding: theme('spacing.card-tablet'),
+          },
+          '@media (min-width: 1024px)': {
+            padding: theme('spacing.card-desktop'),
+          },
+        },
+        '.px-card-responsive': {
+          paddingLeft: theme('spacing.card-mobile'),
+          paddingRight: theme('spacing.card-mobile'),
+          '@media (min-width: 768px)': {
+            paddingLeft: theme('spacing.card-tablet'),
+            paddingRight: theme('spacing.card-tablet'),
+          },
+          '@media (min-width: 1024px)': {
+            paddingLeft: theme('spacing.card-desktop'),
+            paddingRight: theme('spacing.card-desktop'),
+          },
+        },
+        '.py-card-responsive': {
+          paddingTop: theme('spacing.card-mobile'),
+          paddingBottom: theme('spacing.card-mobile'),
+          '@media (min-width: 768px)': {
+            paddingTop: theme('spacing.card-tablet'),
+            paddingBottom: theme('spacing.card-tablet'),
+          },
+          '@media (min-width: 1024px)': {
+            paddingTop: theme('spacing.card-desktop'),
+            paddingBottom: theme('spacing.card-desktop'),
+          },
+        },
+        '.gap-element-responsive': {
+          gap: theme('spacing.element-mobile'),
+          '@media (min-width: 768px)': {
+            gap: theme('spacing.element-tablet'),
+          },
+          '@media (min-width: 1024px)': {
+            gap: theme('spacing.element-desktop'),
+          },
+        },
+        '.mb-section-responsive': {
+          marginBottom: theme('spacing.section-mobile'),
+          '@media (min-width: 768px)': {
+            marginBottom: theme('spacing.section-tablet'),
+          },
+          '@media (min-width: 1024px)': {
+            marginBottom: theme('spacing.section-desktop'),
+          },
+        },
+        '.mt-section-responsive': {
+          marginTop: theme('spacing.section-mobile'),
+          '@media (min-width: 768px)': {
+            marginTop: theme('spacing.section-tablet'),
+          },
+          '@media (min-width: 1024px)': {
+            marginTop: theme('spacing.section-desktop'),
+          },
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };
 
 export default config;
