@@ -134,7 +134,17 @@ const config: Config = {
         extrabold: String(tokens.typography.fontWeight.extrabold),
       },
       spacing: {
-        ...tokens.spacing.scale,
+        // Escala base de espaciado (4px scale)
+        xs: tokens.spacing.scale.xs,      // 0.25rem (4px)
+        sm: tokens.spacing.scale.sm,      // 0.5rem (8px)
+        md: tokens.spacing.scale.md,      // 0.75rem (12px)
+        base: tokens.spacing.scale.base,  // 1rem (16px)
+        lg: tokens.spacing.scale.lg,      // 1.5rem (24px)
+        xl: tokens.spacing.scale.xl,      // 2rem (32px)
+        '2xl': tokens.spacing.scale['2xl'], // 3rem (48px)
+        '3xl': tokens.spacing.scale['3xl'], // 4rem (64px)
+        '4xl': tokens.spacing.scale['4xl'], // 6rem (96px)
+        // Valores responsive para uso en utilidades personalizadas
         'page-mobile': tokens.spacing.responsive.pagePadding.mobile,
         'page-tablet': tokens.spacing.responsive.pagePadding.tablet,
         'page-desktop': tokens.spacing.responsive.pagePadding.desktop,

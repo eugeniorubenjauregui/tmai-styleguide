@@ -65,13 +65,13 @@ export const Navigation: React.FC<NavigationProps> = ({
 }) => {
   const containerClasses = classNames(
     'flex',
-    orientation === 'horizontal' ? 'flex-row gap-1' : 'flex-col gap-1',
+    orientation === 'horizontal' ? 'flex-row gap-xs' : 'flex-col gap-xs',
     className
   );
 
   const itemClasses = (item: NavigationItem) =>
     classNames(
-      'inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors duration-200',
+      'inline-flex items-center gap-sm px-base py-sm rounded-lg font-medium transition-colors duration-200',
       orientation === 'horizontal' ? 'text-sm' : 'text-base',
       item.active
         ? 'bg-brand-primary text-white'

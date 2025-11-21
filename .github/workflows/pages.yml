@@ -1,0 +1,105 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Prepare Pages structure
+      run: |
+        mkdir -p _site
+        # Copiar dist (CSS y JS compilados)
+        cp -r dist _site/
+        # Copiar preview y ajustar rutas
+        cp -r preview _site/
+        # Copiar docs y ajustar rutas
+        cp -r docs _site/
+        # Crear index.html en la raíz que redirija a preview
+        cat > _site/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Lytics Styleguide</title>
+  <meta http-equiv="refresh" content="0; url=./preview/index.html">
+  <link rel="canonical" href="./preview/index.html">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f8fafc;
+    }
+    .redirect {
+      text-align: center;
+      color: #0f172a;
+    }
+    a {
+      color: #14b8a6;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="redirect">
+    <h1>AI Lytics Styleguide</h1>
+    <p>Redirigiendo...</p>
+    <p><a href="./preview/index.html">Ir al Preview</a></p>
+  </div>
+  <script>window.location.href="./preview/index.html"</script>
+</body>
+</html>
+EOF
+        
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: _site
+          
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

@@ -77,7 +77,7 @@ export const DataTable = <T extends Record<string, any>>({
   const theadClasses = 'bg-gray-50';
   const thClasses = (column: DataTableColumn<T>) =>
     classNames(
-      'px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider',
+      'px-xl py-md text-left text-xs font-medium text-gray-500 uppercase tracking-wider',
       column.align === 'center' && 'text-center',
       column.align === 'right' && 'text-right'
     );
@@ -92,7 +92,7 @@ export const DataTable = <T extends Record<string, any>>({
 
   const tdClasses = (column: DataTableColumn<T>) =>
     classNames(
-      'px-6 py-4 whitespace-nowrap text-sm text-gray-900',
+      'px-xl py-base whitespace-nowrap text-sm text-gray-900',
       column.align === 'center' && 'text-center',
       column.align === 'right' && 'text-right'
     );
@@ -125,7 +125,7 @@ export const DataTable = <T extends Record<string, any>>({
             <tr>
               <td
                 colSpan={columns.length}
-                className="px-6 py-4 text-center text-sm text-gray-500"
+                className="px-xl py-base text-center text-sm text-gray-500"
               >
                 No data available
               </td>

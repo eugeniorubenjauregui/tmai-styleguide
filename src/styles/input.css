@@ -11,7 +11,9 @@
 }
 
 @layer utilities {
-  /* Responsive Page Padding Utilities */
+  /* ============================================
+     RESPONSIVE PAGE PADDING UTILITIES
+     ============================================ */
   .p-page-responsive {
     padding: 1rem; /* 16px mobile */
   }
@@ -66,7 +68,9 @@
     }
   }
   
-  /* Responsive Card Padding Utilities */
+  /* ============================================
+     RESPONSIVE CARD PADDING UTILITIES
+     ============================================ */
   .p-card-responsive {
     padding: 1rem; /* 16px mobile */
   }
@@ -121,7 +125,9 @@
     }
   }
   
-  /* Responsive Element Gap Utilities */
+  /* ============================================
+     RESPONSIVE ELEMENT GAP UTILITIES
+     ============================================ */
   .gap-element-responsive {
     gap: 0.75rem; /* 12px mobile */
   }
@@ -138,7 +144,63 @@
     }
   }
   
-  /* Responsive Section Gap Utilities */
+  /* ============================================
+     RESPONSIVE SECTION MARGIN UTILITIES
+     ============================================ */
+  .m-section-responsive {
+    margin: 3rem; /* 48px mobile */
+  }
+  
+  @media (min-width: 768px) {
+    .m-section-responsive {
+      margin: 4rem; /* 64px tablet */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .m-section-responsive {
+      margin: 6rem; /* 96px desktop */
+    }
+  }
+  
+  .mx-section-responsive {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .mx-section-responsive {
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .mx-section-responsive {
+      margin-left: 6rem;
+      margin-right: 6rem;
+    }
+  }
+  
+  .my-section-responsive {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .my-section-responsive {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .my-section-responsive {
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+    }
+  }
+  
   .mb-section-responsive {
     margin-bottom: 3rem; /* 48px mobile */
   }
@@ -168,6 +230,38 @@
   @media (min-width: 1024px) {
     .mt-section-responsive {
       margin-top: 6rem; /* 96px desktop */
+    }
+  }
+  
+  .ml-section-responsive {
+    margin-left: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .ml-section-responsive {
+      margin-left: 4rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .ml-section-responsive {
+      margin-left: 6rem;
+    }
+  }
+  
+  .mr-section-responsive {
+    margin-right: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .mr-section-responsive {
+      margin-right: 4rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .mr-section-responsive {
+      margin-right: 6rem;
     }
   }
 }

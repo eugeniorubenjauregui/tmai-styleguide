@@ -37,7 +37,7 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
   const containerClasses = classNames(
     'inline-flex',
     orientation === 'horizontal' ? 'flex-row' : 'flex-col',
-    !attached && (orientation === 'horizontal' ? 'gap-2' : 'gap-2'),
+    !attached && (orientation === 'horizontal' ? 'gap-sm' : 'gap-sm'),
     attached && orientation === 'horizontal' && '[&>button:not(:first-child)]:rounded-l-none [&>button:not(:last-child)]:rounded-r-none [&>button:not(:last-child)]:border-r-0',
     attached && orientation === 'vertical' && '[&>button:not(:first-child)]:rounded-t-none [&>button:not(:last-child)]:rounded-b-none [&>button:not(:last-child)]:border-b-0',
     className

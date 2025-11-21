@@ -25,11 +25,12 @@ SDK completo de styleguide para AI Lytics - Sistema de diseño modular basado en
 
 ## 📚 Documentación y Preview
 
-- **[Documentación Completa](./docs/index.html)** - Página de documentación con todos los componentes y tokens
-- **[Preview Interactivo](./preview/index.html)** - Aplicación de preview para probar componentes en tiempo real
+- **[🌐 Preview Interactivo (GitHub Pages)](https://eugeniorubenjauregui.github.io/tmai-styleguide/preview/index.html)** - Aplicación de preview para probar componentes en tiempo real
+- **[📖 Documentación Completa (GitHub Pages)](https://eugeniorubenjauregui.github.io/tmai-styleguide/docs/index.html)** - Página de documentación con todos los componentes y tokens
 - **[Guía de Uso](./docs/GUIDE.md)** - Guía completa de instalación y uso
 - **[Documentación de Componentes](./docs/components.md)** - Detalles de cada componente
 - **[Documentación de Tokens](./docs/tokens.md)** - Referencia completa de design tokens
+- **[Sistema de Espaciados](./docs/SPACING.md)** - Guía completa del sistema de espaciados
 
 ## Instalación
 

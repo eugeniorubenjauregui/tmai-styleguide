@@ -77,7 +77,7 @@ const stateClasses: Record<InputState, string> = {
 };
 
 const baseClasses =
-  'w-full px-3 py-3 text-base rounded-lg border transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-100';
+  'w-full px-md py-md text-base rounded-lg border transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-100';
 
 export const Input: React.FC<InputProps> = ({
   type = 'text',

@@ -68,9 +68,9 @@ const variantClasses: Record<ButtonVariant, string> = {
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-5 py-2.5 text-base',
-  lg: 'px-6 py-3 text-lg',
+  sm: 'px-base py-sm text-sm',      // 16px horizontal, 8px vertical
+  md: 'px-lg py-2.5 text-base',     // 24px horizontal, 10px vertical (2.5 = 0.625rem)
+  lg: 'px-xl py-md text-lg',        // 32px horizontal, 12px vertical
 };
 
 const disabledClasses = 'opacity-50 cursor-not-allowed pointer-events-none';

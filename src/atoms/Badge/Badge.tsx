@@ -42,8 +42,8 @@ const variantClasses: Record<BadgeVariant, string> = {
 };
 
 const sizeClasses: Record<BadgeSize, string> = {
-  sm: 'px-2 py-0.5 text-xs',
-  md: 'px-2.5 py-1 text-sm',
+  sm: 'px-sm py-0.5 text-xs',      // 8px horizontal, 2px vertical
+  md: 'px-2.5 py-xs text-sm',       // 10px horizontal, 4px vertical
 };
 
 const baseClasses = 'inline-flex items-center font-medium rounded-full';

@@ -84,7 +84,7 @@ export const Form: React.FC<FormProps> = ({
         <FormField key={field.id} {...field} />
       ))}
       {(submitButton || cancelButton) && (
-        <div className="flex items-center justify-end gap-3 pt-4">
+        <div className="flex items-center justify-end gap-md pt-base">
           {cancelButton && (
             <Button
               type="button"
