@@ -1,6 +1,6 @@
 {
   "name": "ai-lytics-styleguide",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SDK Styleguide completo para AI Lytics - Sistema de diseño modular basado en Atomic Design",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
